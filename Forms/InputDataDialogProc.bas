@@ -177,6 +177,15 @@ Function InputDataDialogProc( _
 			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_PARAMETER_R), UDM_SETRANGE32, INT_MIN, Cast(LPARAM, INT_MAX))
 			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_PARAMETER_R), UDM_SETPOS32, 0, Cast(LPARAM, 1))
 			
+			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_AXES_X), UDM_SETRANGE32, INT_MIN, Cast(LPARAM, INT_MAX))
+			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_AXES_X), UDM_SETPOS32, 0, Cast(LPARAM, 0))
+			
+			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_AXES_Y), UDM_SETRANGE32, INT_MIN, Cast(LPARAM, INT_MAX))
+			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_AXES_Y), UDM_SETPOS32, 0, Cast(LPARAM, 0))
+			
+			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_AXES_Z), UDM_SETRANGE32, INT_MIN, Cast(LPARAM, INT_MAX))
+			SendMessage(GetDlgItem(hwndDlg, IDC_UPD_AXES_Z), UDM_SETPOS32, 0, Cast(LPARAM, 0))
+			
 			Dim hListInterest As HWND = GetDlgItem(hwndDlg, IDC_LVW_COORDINATES)
 			ListView_SetExtendedListViewStyle(hListInterest, LVS_EX_FULLROWSELECT Or LVS_EX_GRIDLINES)
 			
