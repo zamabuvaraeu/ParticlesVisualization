@@ -10,7 +10,7 @@ Declare Function wWinMain( _
 #ifdef WITHOUT_RUNTIME
 Sub EntryPoint()
 #else
-Function main Alias "main"()As Long
+'Function main Alias "main"()As Long
 #endif
 	
 	Dim RetCode As Long = wWinMain( _
@@ -20,10 +20,11 @@ Function main Alias "main"()As Long
 		SW_SHOW _
 	)
 	
+#ifdef WITHOUT_RUNTIME
+	
 	ExitProcess(RetCode)
 	
-#ifdef WITHOUT_RUNTIME
 End Sub
 #else
-End Function
+	End(RetCode)
 #endif
