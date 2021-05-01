@@ -4,6 +4,7 @@
 #include once "win\oleauto.bi"
 #include once "crt.bi"
 #include once "crt\limits.bi"
+#include once "DirectXWindowWndProc.bi"
 #include once "DisplayError.bi"
 #include once "Resources.RH"
 
@@ -273,6 +274,15 @@ Function InputDataDialogProc( _
 							Item.iSubItem = 4
 							Item.pszText = @buf(0)
 							ListView_SetItem(hListInterest, @Item)
+							
+							Dim hDXWindow As HWND = GetDlgItem(hwndDlg, IDC_UCC_DIRECTXWINDOW)
+							
+							Dim prtParticle As Particle = Any
+							prtParticle.X = GetDlgItemInt(hwndDlg, IDC_EDT_COORDINATES_X, NULL, TRUE)
+							prtParticle.Y = GetDlgItemInt(hwndDlg, IDC_EDT_COORDINATES_Y, NULL, TRUE)
+							prtParticle.Z = GetDlgItemInt(hwndDlg, IDC_EDT_COORDINATES_Z, NULL, TRUE)
+							prtParticle.R = GetDlgItemInt(hwndDlg, IDC_EDT_PARAMETER_R, NULL, TRUE)
+							SendMessage(hDXWindow, DRXWINDOW_ADD, 1, Cast(LPARAM, @prtParticle))
 							
 					End Select
 					
