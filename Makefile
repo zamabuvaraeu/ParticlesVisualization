@@ -407,11 +407,11 @@ $(OBJ_RELEASE_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).asm: $(OBJ_RELEASE_DIR)
 $(OBJ_DEBUG_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).asm:   $(OBJ_DEBUG_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c
 	$(GCC_COMPILER) $(GCC_COMPILER_PARAMETERS_DEBUG) $(OBJ_DEBUG_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c -o $(OBJ_DEBUG_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).asm
 
-$(OBJ_RELEASE_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c: Forms\InputDataDialogProc.bas Forms\InputDataDialogProc.bi Modules\DisplayError.bi Resources.RH
+$(OBJ_RELEASE_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c: Forms\InputDataDialogProc.bas Forms\InputDataDialogProc.bi Forms\DirectXWindowWndProc.bi Modules\DisplayError.bi Resources.RH
 	$(FREEBASIC_COMPILER) $(FREEBASIC_PARAMETERS_RELEASE_GUI) "Forms\InputDataDialogProc.bas"
 	move /y Forms\InputDataDialogProc.c $(OBJ_RELEASE_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c
 
-$(OBJ_DEBUG_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c:   Forms\InputDataDialogProc.bas Forms\InputDataDialogProc.bi Modules\DisplayError.bi Resources.RH
+$(OBJ_DEBUG_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c:   Forms\InputDataDialogProc.bas Forms\InputDataDialogProc.bi Forms\DirectXWindowWndProc.bi Modules\DisplayError.bi Resources.RH
 	$(FREEBASIC_COMPILER) $(FREEBASIC_PARAMETERS_DEBUG_GUI) "Forms\InputDataDialogProc.bas"
 	move /y Forms\InputDataDialogProc.c $(OBJ_DEBUG_DIR)\InputDataDialogProc$(FILE_SUFFIX_GUI).c
 
