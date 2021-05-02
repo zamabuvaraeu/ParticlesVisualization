@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
 	<assemblyIdentity version="1.0.0.0" processorArchitecture="*" name="BatchedFiles.Визуализатор частиц.Визуализатор частиц в трёхмерном пространстве" type="win32" />
 	<description>Визуализатор частиц в трёхмерном пространстве</description>
 	<dependency>
@@ -16,10 +16,10 @@
 			<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}"/>
 		</application>
 	</compatibility>
-	<trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
+	<trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
 		<security>
 			<requestedPrivileges>
-				<requestedExecutionLevel level="asInvoker"/>
+				<requestedExecutionLevel level="asInvoker" uiAccess="false"></requestedExecutionLevel>
 			</requestedPrivileges>
 		</security>
 	</trustInfo>
@@ -29,4 +29,5 @@
 			<dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">permonitorv2,permonitor</dpiAwareness>
 			<gdiScaling xmlns="http://schemas.microsoft.com/SMI/2017/WindowsSettings">false</gdiScaling>
 		</asmv3:windowsSettings>
-	</asmv3:application></assembly>
+	</asmv3:application>
+</assembly>
