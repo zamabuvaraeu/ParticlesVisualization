@@ -20,11 +20,7 @@ Type Particle
 	R As Integer
 End Type
 
-Declare Function DirectXWindowWndProc( _
-	ByVal hWnd As HWND, _
-	ByVal wMsg As UINT, _
-	ByVal wParam As WPARAM, _
-	ByVal lParam As LPARAM _
-) As LRESULT
+Declare Function RegisterDirecXWindowClass( _
+)As Integer
 
 #endif

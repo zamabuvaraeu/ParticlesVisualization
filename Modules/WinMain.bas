@@ -44,23 +44,8 @@ Function wWinMain( _
 	End Scope
 	
 	Scope
-		Dim wcls As WNDCLASSEX = Any
-		With wcls
-			.cbSize        = SizeOf(WNDCLASSEX)
-			.style         = 0 ' CS_HREDRAW Or CS_VREDRAW
-			.lpfnWndProc   = @DirectXWindowWndProc
-			.cbClsExtra    = 0
-			.cbWndExtra    = 0
-			.hInstance     = hInst
-			.hIcon         = LoadIcon(hInst, Cast(TCHAR Ptr, IDI_MAIN))
-			.hCursor       = LoadCursor(NULL, IDC_ARROW)
-			.hbrBackground = Cast(HBRUSH, GetStockObject(BLACK_BRUSH))
-			.lpszMenuName  = NULL
-			.lpszClassName = StrPtr(USERCLASS_DIRECTXWINDOW)
-			.hIconSm       = NULL
-		End With
-		
-		If RegisterClassEx(@wcls) = FALSE Then
+		Dim RegisterResult As Integer = RegisterDirecXWindowClass()
+		If RegisterResult = 0 Then
 			DisplayError(GetLastError(), REGISTERWINDOWCLASS_ERRORSTRING)
 			Return 2
 		End If
